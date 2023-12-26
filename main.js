@@ -79,25 +79,25 @@ function game () {
         function getRoundWinner () {
             if (userSelection == "ROCK" && computerSelection == "SCISSORS") {
                 alert ("You fricking win! Rock beats Scissors")
-                return 1
+                return "USER"
             } else if (userSelection == "PAPER" && computerSelection == "ROCK") {
                 alert ("You fricking win! Paper beats Rock")
-                return 1
+                return "USER"
             } else if (userSelection == "SCISSORS" && computerSelection == "PAPER") {
                 alert ("You fricking win! Scissors beat Paper")
-                return 1
+                return "USER"
             } else if (userSelection == "SCISSORS" && computerSelection == "ROCK") {
                 alert ("You loser! Rock beats Scissors")
-                return 0
+                return "COMPUTER"
             } else if (userSelection == "PAPER" && computerSelection == "SCISSORS") {
                 alert ("You loser! Scissors beat Paper")
-                return 0
+                return "COMPUTER"
             } else if (userSelection == "ROCK" && computerSelection == "PAPER") {
                 alert ("You loser! Paper beats Rock")
                 return "COMPUTER"
             } else if (userSelection == computerSelection){
                 alert ("Tie!")
-                return 2
+                return "TIE"
             } else {
                 alert ("Error")
             }

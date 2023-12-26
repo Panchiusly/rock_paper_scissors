@@ -2,16 +2,21 @@
 let game1 = game ();
 let game2 = game ();
 let game3 = game ();
+let game4 = game ();
+let game5 = game ();
 
 //user = 1; computer = 0; ties = 2;
 
-let playRound = [game1, game2, game3];
+let playRound = [game1, game2, game3, game4, game5];
 console.log (playRound);
 
 let user = userCounts ();
 
 function userCounts () {
     let result;
+    let result2 = secondCount ();
+    let resultGeneral;
+    
     if (game1 == "USER") {
         if (game2 == "USER" || game3 == "USER") {
             if (game2 == "USER") {
@@ -39,7 +44,20 @@ function userCounts () {
         result = 0;
     }
 
-    return result
+    function secondCount () {
+        let result;
+        if (game4 == "USER") {
+            if (game4 == "USER" && game5 == "USER") {
+                result = 2;
+            } else {
+                result = 1;
+            } 
+        } else {
+        result = 0;
+        }
+        return result
+    }
+    return resultGeneral = result + result2
 }
 
 

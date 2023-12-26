@@ -1,53 +1,107 @@
 
-let playRound = game ();
+let game1 = game ();
+let game2 = game ();
+let game3 = game ();
+
+//user = 1; computer = 0; ties = 2;
+
+let playRound = [game1, game2, game3];
 console.log (playRound);
-// Ok, only in this way I can call the function 5 times. 
 
-function game () {
-    //I think everything should be inside of this function.   
+let user = userCounts ();
 
-    let input = prompt ("What's your winner hand today?")
-    let userSelection = input.toUpperCase ();
-    let computerSelection = getComputerChoice ();
-
-    function getComputerChoice () {
-        let hands = ["ROCK", "PAPER", "SCISSORS"]
-        let computerSelection = hands [Math.floor(Math.random() * hands.length)];
-        // I don't really understand why this Math.floor and Math.random works. But it does.
-        return computerSelection;
-    }
-
-    function getRoundWinner () {
-        if (userSelection == "ROCK" && computerSelection == "SCISSORS") {
-            alert ("You fricking win! Rock beats Scissors")
-            return 1
-        } else if (userSelection == "PAPER" && computerSelection == "ROCK") {
-            alert ("You fricking win! Paper beats Rock")
-            return 1
-        } else if (userSelection == "SCISSORS" && computerSelection == "PAPER") {
-            alert ("You fricking win! Scissors beat Paper")
-            return 1
-        } else if (userSelection == "SCISSORS" && computerSelection == "ROCK") {
-            alert ("You loser! Rock beats Scissors")
-            return 0
-        } else if (userSelection == "PAPER" && computerSelection == "SCISSORS") {
-            alert ("You loser! Scissors beat Paper")
-            return 0
-        } else if (userSelection == "ROCK" && computerSelection == "PAPER") {
-            alert ("You loser! Paper beats Rock")
-            return 0
-        } else if (userSelection == computerSelection){
-            alert ("Tie!")
-            return 2
-            //I gotta check this cuz, even if the input is other like "ROck" it will take it as a tie.
-            //Fixed by converting the answer to uppercase.
+function userCounts () {
+    let result;
+    if (game1 == 1) {
+        if (game2 == 1 || game3 == 1) {
+            if (game2 == 1) {
+                if (game2 && game3 == 1) {
+                    result = 3;
+                    } else {
+                    result = 2;
+                    }
+                } else if (game3 == 1) {
+                    result = 2;
+                } else if (game2 && game3 == 1) {
+                    result = 3; } 
         } else {
-            alert ("Error")
+            result = 1;
         }
-     
+    } else if (game2 == 1) {
+        if (game3 == 1) {
+            result = 2;
+        } else {
+        result = 1;
+        }
+    } else if (game3 == 1) {
+        result = 1;
+    } else {
+        result = 0;
     }
-    return getRoundWinner ();
+
+    return result
 }
 
 
 
+console.log(user);
+
+//CREATING A SUBFUNCTION 
+
+// function userCheck () {
+//     if (game1 == 1) {
+//         return 1
+//     } else if (game2 == 1) {
+//         return 1
+//     } else if (game3 == 1) {
+//         return 1
+//     } else {
+//         return "Error102"
+//     }
+// }
+
+// console.log(user);
+// let roundCounter = [user, 0, 3];
+// console.log(roundCounter)
+
+function game () {
+    let input = prompt ("What's your winner hand today?")
+    let userSelection = input.toUpperCase ();
+    let computerSelection = getComputerChoice ();
+
+        function getComputerChoice () {
+            let hands = ["ROCK", "PAPER", "SCISSORS"]
+            let computerSelection = hands [Math.floor(Math.random() * hands.length)];
+            // I don't really understand why this Math.floor and Math.random works. But it does.
+            return computerSelection;
+        }
+
+        function getRoundWinner () {
+            if (userSelection == "ROCK" && computerSelection == "SCISSORS") {
+                alert ("You fricking win! Rock beats Scissors")
+                return 1
+            } else if (userSelection == "PAPER" && computerSelection == "ROCK") {
+                alert ("You fricking win! Paper beats Rock")
+                return 1
+            } else if (userSelection == "SCISSORS" && computerSelection == "PAPER") {
+                alert ("You fricking win! Scissors beat Paper")
+                return 1
+            } else if (userSelection == "SCISSORS" && computerSelection == "ROCK") {
+                alert ("You loser! Rock beats Scissors")
+                return 0
+            } else if (userSelection == "PAPER" && computerSelection == "SCISSORS") {
+                alert ("You loser! Scissors beat Paper")
+                return 0
+            } else if (userSelection == "ROCK" && computerSelection == "PAPER") {
+                alert ("You loser! Paper beats Rock")
+                return "COMPUTER"
+            } else if (userSelection == computerSelection){
+                alert ("Tie!")
+                return 2
+            } else {
+                alert ("Error")
+            }
+        
+        }
+    return getRoundWinner ();
+}

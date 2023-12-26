@@ -12,28 +12,28 @@ let user = userCounts ();
 
 function userCounts () {
     let result;
-    if (game1 == 1) {
-        if (game2 == 1 || game3 == 1) {
-            if (game2 == 1) {
-                if (game2 && game3 == 1) {
+    if (game1 == "USER") {
+        if (game2 == "USER" || game3 == "USER") {
+            if (game2 == "USER") {
+                if (game2 && game3 == "USER") {
                     result = 3;
                     } else {
                     result = 2;
                     }
-                } else if (game3 == 1) {
+                } else if (game3 == "USER") {
                     result = 2;
-                } else if (game2 && game3 == 1) {
+                } else if (game2 == "USER" && game3 == "USER") {
                     result = 3; } 
         } else {
             result = 1;
         }
-    } else if (game2 == 1) {
-        if (game3 == 1) {
+    } else if (game2 == "USER") {
+        if (game3 == "USER") {
             result = 2;
         } else {
         result = 1;
         }
-    } else if (game3 == 1) {
+    } else if (game3 == "USER") {
         result = 1;
     } else {
         result = 0;

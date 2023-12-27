@@ -5,20 +5,11 @@ let game3 = game ();
 let game4 = game ();
 let game5 = game ();
 
-// let game1 = "USER";
-// let game2 = "COMPUTER";
-// let game3 = "COMPUTER";
-// let game4 = "COMPUTER";
-// let game5 = "USER";
-
 let playRound = [game1, game2, game3, game4, game5];
-console.log (playRound);
 
 let user = playerCounter ("USER"); 
 let computer = playerCounter ("COMPUTER");
 let tie = playerCounter ("TIE")
-
-console.log(user, computer, tie);
 
 let winner = whoWins (); 
 
@@ -33,7 +24,6 @@ function whoWins () {
         alert ("Error!")
     }
 }
-
 
 function playerCounter (player) {
     let result;
@@ -91,7 +81,6 @@ function game () {
         function getComputerChoice () {
             let hands = ["ROCK", "PAPER", "SCISSORS"]
             let computerSelection = hands [Math.floor(Math.random() * hands.length)];
-            // I don't really understand why this Math.floor and Math.random works. But it does.
             return computerSelection;
         }
 
@@ -120,7 +109,6 @@ function game () {
             } else {
                 alert ("Error")
             }
-        
         }
     return getRoundWinner ();
 }

@@ -112,3 +112,25 @@ function game () {
         }
     return getRoundWinner ();
 }
+
+// Other of coding it by following the every point of the assignment
+
+// let roundWinner = playround (userSelection, computerSelection);
+
+// function playRound (userSelection, computerSelection) {
+//     if (userSelection == computerSelection) {
+//         return "This is a tie! Let's replay it"
+//     } else if (userSelection == "PAPER" && computerSelection == "ROCK") {
+//         return "You win! Paper beats Rock"
+//     } else if (userSelection == "SCISSORS" && computerSelection == "PAPER") {
+//         return "You win! Scissors beat Paper"
+//     } else if (userSelection == "SCISSORS" && computerSelection == "ROCK") {
+//         return "You lose! Rock beats Scissors"
+//     } else if (userSelection == "PAPER" && computerSelection == "SCISSORS") {
+//         return "You lose! Scissors beat Paper"
+//     } else if (userSelection == "ROCK" && computerSelection == "PAPER") {
+//         return "You lose! Paper beats Rock"
+//     }  else {
+//         return "Error"
+//     }
+// }

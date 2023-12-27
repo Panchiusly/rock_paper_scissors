@@ -1,44 +1,50 @@
 
-let game1 = game ();
-let game2 = game ();
-let game3 = game ();
-let game4 = game ();
-let game5 = game ();
+// let game1 = game ();
+// let game2 = game ();
+// let game3 = game ();
+// let game4 = game ();
+// let game5 = game ();
+
+let game1 = "USER";
+let game2 = "COMPUTER";
+let game3 = "USER";
+let game4 = "USER";
+let game5 = "USER";
 
 //user = 1; computer = 0; ties = 2;
 
 let playRound = [game1, game2, game3, game4, game5];
 console.log (playRound);
 
-let user = userCounts ();
+let user = playerCounter ("USER");
 
-function userCounts () {
+function playerCounter (player) {
     let result;
     let result2 = secondCount ();
     let resultGeneral;
     
-    if (game1 == "USER") {
-        if (game2 == "USER" || game3 == "USER") {
-            if (game2 == "USER") {
-                if (game2 && game3 == "USER") {
+    if (game1 == player) {
+        if (game2 == player || game3 == player) {
+            if (game2 == player) {
+                if (game2 && game3 == player) {
                     result = 3;
                     } else {
                     result = 2;
                     }
-                } else if (game3 == "USER") {
+                } else if (game3 == player) {
                     result = 2;
-                } else if (game2 == "USER" && game3 == "USER") {
+                } else if (game2 == player && game3 == player) {
                     result = 3; } 
         } else {
             result = 1;
         }
-    } else if (game2 == "USER") {
-        if (game3 == "USER") {
+    } else if (game2 == player) {
+        if (game3 == player) {
             result = 2;
         } else {
         result = 1;
         }
-    } else if (game3 == "USER") {
+    } else if (game3 == player) {
         result = 1;
     } else {
         result = 0;
@@ -46,8 +52,8 @@ function userCounts () {
 
     function secondCount () {
         let result;
-        if (game4 == "USER") {
-            if (game4 == "USER" && game5 == "USER") {
+        if (game4 == player || game5 == player) {
+            if (game4 == player && game5 == player) {
                 result = 2;
             } else {
                 result = 1;
@@ -59,8 +65,6 @@ function userCounts () {
     }
     return resultGeneral = result + result2
 }
-
-
 
 console.log(user);
 

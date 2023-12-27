@@ -7,8 +7,8 @@ let game5 = game ();
 
 // let game1 = "USER";
 // let game2 = "COMPUTER";
-// let game3 = "USER";
-// let game4 = "TIE";
+// let game3 = "COMPUTER";
+// let game4 = "COMPUTER";
 // let game5 = "USER";
 
 let playRound = [game1, game2, game3, game4, game5];
@@ -19,6 +19,21 @@ let computer = playerCounter ("COMPUTER");
 let tie = playerCounter ("TIE")
 
 console.log(user, computer, tie);
+
+let winner = whoWins (); 
+
+function whoWins () {
+    if (user > computer) {
+        alert ("You won the round!")
+    } else if (computer > user) {
+        alert ("You lost the whole thing bud")
+    } else if (user == computer) {
+        alert ("T'was a tie :(")
+    } else {
+        alert ("Error!")
+    }
+}
+
 
 function playerCounter (player) {
     let result;

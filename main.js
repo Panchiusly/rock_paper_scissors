@@ -113,7 +113,7 @@ function game () {
     return getRoundWinner ();
 }
 
-// Other of coding it by following the every point of the assignment
+// Other way of doing  it by following the assignment instructions a bit more to the letter
 
 // let roundWinner = playround (userSelection, computerSelection);
 
